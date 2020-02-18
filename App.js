@@ -45,12 +45,15 @@ export default class VertigoLogIn extends Component {
 
               <View style={styles.textContainer}>
                   <Text style={styles.white}>Not Registered?</Text>
-                  <Text style={styles.blue}>Register Here</Text>
+                  <TouchableOpacity>
+                      <Text style={styles.blue}>Register Here</Text>
+                  </TouchableOpacity>
               </View>
 
               <View style={styles.line}/>
-
-              <Text style={styles.physio}>Log in as Physio</Text>
+              <TouchableOpacity>
+                  <Text style={styles.physio}>Log in as Physio</Text>
+              </TouchableOpacity>
 
 
         </ImageBackground>
