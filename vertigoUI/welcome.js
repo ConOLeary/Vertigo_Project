@@ -7,30 +7,28 @@ import {Platform, StyleSheet, Text,
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-//import icon from 'react-native-vector-icons/Ionicons'
-
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-function LogInScreen() {
-    return (
 
-              <View>
-                  <Text style={styles.white}>Welcome</Text>
-                  <TouchableOpacity>
-                      <Text style={styles.blue}>Touch</Text>
-                  </TouchableOpacity>
-              </View>
+
+export default function WelcomeScreen({navigation}){
+    return (
+      <View style={styles.Container}>
+          <Text>Welcome</Text>
+      </View>
+
+
     );
+
 }
 
-//----------------------------------------------------------------------------------
-//    Navigation
-//----------------------------------------------------------------------------------
+const styles = StyleSheet.create(
+  {
+    Container:
+    {
+      flex: 1,
+      alignItems: 'center',
+    },
 
-
-export default LogInScreen;
-
-//----------------------------------------------------------------------------------
-//    StyleSheet
-//----------------------------------------------------------------------------------
+  });
