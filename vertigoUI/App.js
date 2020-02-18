@@ -1,3 +1,13 @@
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text,
+        Button, View, ImageBackground,
+        Image,Dimensions, TextInput,
+          TouchableOpacity} from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
 import bgImage from "./assets/LogIn.jpg"
 import logo from "./assets/vLogo.png"
 //import icon from 'react-native-vector-icons/Ionicons'
@@ -5,8 +15,7 @@ import logo from "./assets/vLogo.png"
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-export default class VertigoLogIn extends Component {
-  render() {
+function LogInScreen() {
     return (
         <ImageBackground source={bgImage} style={styles.BackGroundContainer}>
 
@@ -52,9 +61,29 @@ export default class VertigoLogIn extends Component {
 
         </ImageBackground>
     );
-  }
 }
 
+//----------------------------------------------------------------------------------
+//    Navigation
+//----------------------------------------------------------------------------------
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="LogIn">
+            <Stack.Screen name="LogIn" component={LogInScreen} />
+        </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default LogInScreen;
+
+//----------------------------------------------------------------------------------
+//    StyleSheet
+//----------------------------------------------------------------------------------
 const styles = StyleSheet.create(
   {
     BackGroundContainer:
