@@ -43,6 +43,15 @@ export default class VertigoLogIn extends Component {
                   <Text style= {styles.SignInText}>Sign In</Text>
               </TouchableOpacity>
 
+              <View style={styles.textContainer}>
+                  <Text style={styles.white}>Not Registered?</Text>
+                  <Text style={styles.blue}>Register Here</Text>
+              </View>
+
+              <View style={styles.line}/>
+
+              <Text style={styles.physio}>Log in as Physio</Text>
+
 
         </ImageBackground>
     );
@@ -90,7 +99,7 @@ const styles = StyleSheet.create(
     SignIn:
     {
       marginTop: 15,
-      top: 80,
+      top: 70,
       width: screenWidth -55,
       height: 45,
       borderRadius: 25,
@@ -105,5 +114,36 @@ const styles = StyleSheet.create(
       color: "white",
       fontWeight: "bold",
       fontSize: 20,
+    },
+    textContainer:
+    {
+      marginTop: 90,
+      flex: 5,
+      flexDirection: 'row',
+    },
+    white:
+    {
+      color: "white",
+      //fontWeight: "bold",
+      fontSize: 15,
+    },
+    blue:    {
+      color: "#0085FF",
+      fontWeight: "bold",
+      fontSize: 15,
+      marginLeft: 5,
+    },
+    physio:
+    {
+      color: "#0085FF",
+      fontWeight: "bold",
+      fontSize: 15,
+      marginBottom: 15,
+    },
+    line: {
+      backgroundColor: '#A2A2A2',
+      height: 1,
+      width: 300,
+      marginBottom: 10,
     }
 });
