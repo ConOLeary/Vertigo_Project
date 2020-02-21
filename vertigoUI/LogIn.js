@@ -16,6 +16,10 @@ export default function LogInScreen({navigation}){
     return (
         <ImageBackground source={bgImage} style={styles.BackGroundContainer}>
 
+        <View style={styles.bugFix}>
+
+          </View>
+
             <View styles={styles.logoContainer}>
                 <Image source={logo} styles={styles.logo}/>
             </View>
@@ -68,6 +72,10 @@ export default function LogInScreen({navigation}){
 //----------------------------------------------------------------------------------
 const styles = StyleSheet.create(
   {
+    bugFix:
+    {
+      height: '16%'
+    },
     BackGroundContainer:
     {
       flex: 1,
@@ -83,6 +91,7 @@ const styles = StyleSheet.create(
     },
     logoContainer:
     {
+      //marginTop: '0%',
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
