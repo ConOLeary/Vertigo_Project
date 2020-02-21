@@ -56,9 +56,31 @@ export default function HomeScreen({navigation}){
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                       </View>
+
+
+                  <View style={styles.exercise}>
+                    <Text style={styles.eTitle}>This Week: Thurs 12th</Text>
+                    <View style={styles.eLine}/>
+                    <Text style={styles.eList}>Lateral Gaze Stability I</Text>
+                    <TouchableOpacity style= {styles.eButton}>
+                      <Text style= {styles.eButtonText}>Begin</Text>
+                    </TouchableOpacity>
+
                   </View>
 
-
+                  <View style={styles.exercise}>
+                    <Text style={styles.eTitle}>This Week: Sun 15th</Text>
+                    <View style={styles.eLine}/>
+                    <Text style={styles.eList}>Rotation Exercise I</Text>
+                    <TouchableOpacity style= {styles.eButton}>
+                      <Text style= {styles.eButtonText}>Begin</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.eList}>Vertical Gaze Stability II</Text>
+                    <TouchableOpacity style= {styles.eButton}>
+                      <Text style= {styles.eButtonText}>Begin</Text>
+                    </TouchableOpacity>
+                  </View>
+              </View>
             </ScrollView>
             <TouchableOpacity style={styles.footer}>
                   <View style={styles.burgerBox}>
