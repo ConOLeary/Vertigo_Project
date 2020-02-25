@@ -110,12 +110,12 @@ const styles = StyleSheet.create(
     },
     inputContainer:
     {
-      marginTop: 15
+      marginTop: '3%'
     },
     SignIn:
     {
       marginTop: 15,
-      top: 70,
+      top: '12%',
       width: screenWidth -55,
       height: 45,
       borderRadius: 25,
@@ -154,12 +154,12 @@ const styles = StyleSheet.create(
       color: "#0085FF",
       fontWeight: "bold",
       fontSize: 15,
-      marginBottom: 15,
+      marginBottom: '1%',
     },
     line: {
       backgroundColor: '#A2A2A2',
       height: 1,
-      width: 300,
-      marginBottom: 10,
+      width: '85%',
+      marginBottom: '2%',
     }
 });
