@@ -10,6 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import LogInScreen from './LogIn'
 import WelcomeScreen from './welcome'
+import HomeScreen from './home'
 
 
 //----------------------------------------------------------------------------------
@@ -30,6 +31,11 @@ export default function MyStack() {
         <Stack.Screen
             name="Welcome"
             component={WelcomeScreen}
+            options={{ headerShown: false }}
+            />
+			<Stack.Screen
+            name="Home"
+            component={HomeScreen}
             options={{ headerShown: false }}
             />
       </Stack.Navigator>
