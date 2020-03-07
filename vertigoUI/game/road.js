@@ -7,10 +7,10 @@ const screenHeight = Dimensions.get('window').height;
 
 class Road extends PureComponent {
   render() {
-    let x = this.props.body.position.x;
-    let y = this.props.body.position.y;
+    let x = this.props.position[0];
+    let y = this.props.position[1];
     return (
-      <Image source={road} style={[styles.road, { left: x, top: 0 }]} />
+      <Image source={road} style={[styles.road, { left: x, top: y }]} />
     );
   }
 }
