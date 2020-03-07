@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
 import { StyleSheet, View,Image,Dimensions } from "react-native";
-import road from "./road.jpg"
+import road from "./road.png"
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-class Road extends PureComponent {
+class Road3 extends PureComponent {
   render() {
     let x = this.props.position[0];
     let y = this.props.position[1];
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { Road };
+export { Road3 };
