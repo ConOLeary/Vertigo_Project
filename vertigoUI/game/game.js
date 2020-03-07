@@ -5,9 +5,7 @@ import { GameEngine } from "react-native-game-engine";
 import Matter from "matter-js";
 import { Car } from "./car";
 import { Road } from "./road";
-import { MoveCar } from "./carMovement"
-import { MoveRoad } from "./roadMovement"
-
+import { MoveCar, MoveRoad,Physics } from "./Movement"
 import bgImage from "./road.jpg"
 
 export default class Game extends Component
@@ -17,25 +15,26 @@ export default class Game extends Component
        super(props);
        this.state = {running: true};
        this.gameEngine = null;
-       this.entities = this.setupWorld();
+       //this.entities = this.setupWorld();
    }
 
    setupWorld = () =>
    {
      const { width, height } = Dimensions.get("window");
-     const engine = Matter.Engine.create({ enableSleeping: false });
-     const world = engine.world;
+     let engine = Matter.Engine.create({ enableSleeping: false });
+     let world = engine.world;
 
      let car = Matter.Bodies.rectangle(50, height/2, 80, 40);
      let bg1 = Matter.Bodies.rectangle(0,0,width, height, { isStatic: true });
      let bg2 = Matter.Bodies.rectangle(width,0,width, height, { isStatic: true });
      Matter.World.add(world, [car, bg1, bg2]);
 
+
        return {
            physics: { engine: engine, world: world },
-           bg1: { body: bg1, renderer: Road },
-           bg2: { body: bg2, renderer: Road },
-           car: { body: car, size:[80, 40], renderer: Car},
+           road1: { body: bg1, position: [0,  0], renderer: Road },
+           road2: { body: bg2, position: [width,  0], renderer: Road },
+           car: { body: car, position: [50,  height/2], size:[80, 40], renderer: Car},
        }
    }
 
@@ -46,8 +45,8 @@ export default class Game extends Component
                      ref={(ref) => { this.gameEngine = ref; }}
                      style={styles.gameContainer}
                      running={this.state.running}
-                     systems={[MoveRoad, MoveCar]}
-                     entities={this.entities}>
+                     systems={[Physics, MoveCar, MoveRoad]}
+                     entities={this.setupWorld()}>
                      <StatusBar hidden={true} />
                  </GameEngine>
              </View>
