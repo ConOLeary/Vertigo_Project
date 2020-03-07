@@ -8,10 +8,10 @@ class Car extends PureComponent {
   }
 
   render() {
-    const width = this.props.size[0];
-    const height = this.props.size[1];
-    const x = this.props.body.position.x;
-    const y = this.props.body.position.y;
+    let width = this.props.size[0];
+    let height = this.props.size[1];
+    let x = this.props.position[0];
+    let y = this.props.position[1];
     //const angle = this.props.body.angle;
     return (
       <Image
