@@ -26,7 +26,7 @@ export default class Game extends Component
 
      let engine = Matter.Engine.create({ enableSleeping: false });
      let world = engine.world;
-
+     // let coin = 
      let car = Matter.Bodies.rectangle(50, height/2, 80, 40);
 
      let straight = Matter.Bodies.rectangle(0,   0,width, height, { isStatic: true });
@@ -54,6 +54,7 @@ export default class Game extends Component
                      style={styles.gameContainer}
                      running={this.state.running}
                      systems={[Physics, MoveCar, MoveRoad]}
+                     // add move coin
                      entities={this.setupWorld()}>
                      <StatusBar hidden={true} />
                  </GameEngine>
