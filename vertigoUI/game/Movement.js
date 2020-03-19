@@ -37,6 +37,38 @@ const MoveRoad = (entities, {touches, time}) =>
   } else {
     road4.position =[road4.position[0] - roadSpeed, road4.position[1]];
   }
+  touches.filter(t => t.type === "move").forEach(t =>
+  {
+    if (road1 && road1.position && road2 && road2.position &&
+        road3 && road3.position && road4 && road4.position)
+    {
+      road1.position =
+      [
+        road1.position[0],
+        road1.position[1] + t.delta.pageY
+      ]
+      road2.position =
+      [
+        road2.position[0],
+        road2.position[1] + t.delta.pageY
+      ]
+      road3.position =
+      [
+        road3.position[0],
+        road3.position[1] + t.delta.pageY
+      ]
+      road4.position =
+      [
+        road4.position[0],
+        road4.position[1] + t.delta.pageY
+      ]
+    }
+  });
+    // car.position =
+    // [
+    //   car.position[0],
+    //   car.position[1] + t.delta.pageY
+    // ];
 
   return entities;
 };
@@ -48,14 +80,14 @@ const MoveCar = (entities, {touches, time}) =>
  touches.filter(t => t.type === "move").forEach(t =>
    {
      let car = entities["car"];
-     if (car && car.position)
-     {
-       car.position =
-       [
-         car.position[0],
-         car.position[1] + t.delta.pageY
-       ];
-   }
+  //    if (car && car.position)
+  //    {
+  //      car.position =
+  //      [
+  //        car.position[0],
+  //        car.position[1] + t.delta.pageY
+  //      ];
+  //  }
  });
 
  return entities;
