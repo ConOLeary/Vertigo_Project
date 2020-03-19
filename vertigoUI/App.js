@@ -11,7 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LogInScreen from './LogIn'
 import WelcomeScreen from './welcome'
 import HomeScreen from './home'
-import Game from './Game/game'
+import Game from './game/game'
 
 
 //----------------------------------------------------------------------------------
