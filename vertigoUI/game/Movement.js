@@ -19,23 +19,24 @@ const MoveRoad = (entities, {touches, time}) =>
 {
   let road1 = entities["road1"];
   let road2 = entities["road2"];
+  let road3 = entities["road3"];
+  let road4 = entities["road4"];
 
-  if (road1.position[0] <= -1 * (width-roadSpeed)){
-    road1.position =[ width, road1.position[1]  ];
+  road1.position =[ road1.position[0] - roadSpeed, road1.position[1]  ];
+  road2.position =[road2.position[0] - roadSpeed, road2.position[1]];
+
+  if (road3.position[0] <= -1 * (width-roadSpeed)){
+    road3.position =[ width, road3.position[1]  ];
   } else
   {
-    road1.position =[ road1.position[0] - roadSpeed, road1.position[1]  ];
+    road3.position =[ road3.position[0] - roadSpeed, road3.position[1]  ];
   }
 
-  if (road2.position[0] <= -1 * (width-roadSpeed)){
-    road2.position =[  width, road2.position[1]  ];
+  if (road4.position[0] <= -1 * (width-roadSpeed)){
+    road4.position =[  width, road4.position[1]  ];
   } else {
-    road2.position =[road2.position[0] - roadSpeed, road2.position[1]];
+    road4.position =[road4.position[0] - roadSpeed, road4.position[1]];
   }
-
-//  let engine = entities["physics"].engine;
-  //engine.world.gravity.y = 0; // no downward pull
-  //Matter.Engine.update(engine, time.delta); // move the simulation forward
 
   return entities;
 };
