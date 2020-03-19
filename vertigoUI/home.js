@@ -35,11 +35,13 @@ export default function HomeScreen({navigation}){
                         <Text style={styles.eTitle}>Today: Mon 9th</Text>
                         <View style={styles.eLine}/>
                         <Text style={styles.eList}>Lateral Gaze Stability III</Text>
-                        <TouchableOpacity style= {styles.eButton}>
+                        <TouchableOpacity style= {styles.eButton}
+                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                         <Text style={styles.eList}>Vertical Gaze Stability I</Text>
-                        <TouchableOpacity style= {styles.eButton}>
+                        <TouchableOpacity style= {styles.eButton}
+                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                       </View>
@@ -48,11 +50,13 @@ export default function HomeScreen({navigation}){
                         <Text style={styles.eTitle}>Tomorrow: Tues 10th</Text>
                         <View style={styles.eLine}/>
                         <Text style={styles.eList}>Lateral Gaze Stability II</Text>
-                        <TouchableOpacity style= {styles.eButton}>
+                        <TouchableOpacity style= {styles.eButton}
+                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                         <Text style={styles.eList}>Vertical Gaze Stability III</Text>
-                        <TouchableOpacity style= {styles.eButton}>
+                        <TouchableOpacity style= {styles.eButton}
+                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                       </View>
