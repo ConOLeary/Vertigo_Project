@@ -4,6 +4,8 @@ import {Dimensions} from "react-native";
 const {width, height} = Dimensions.get("window");
 
 let roadSpeed = 8;
+let yPosition = 0;
+let Y_MAX = 500;
 
 //----------------------------------------------------
 
@@ -39,9 +41,14 @@ const MoveRoad = (entities, {touches, time}) =>
   }
   touches.filter(t => t.type === "move").forEach(t =>
   {
-    if (road1 && road1.position && road2 && road2.position &&
-        road3 && road3.position && road4 && road4.position)
+    if (  (road1 && road1.position && road2 && road2.position &&
+        road3 && road3.position && road4 && road4.position) &&
+        (((yPosition < Y_MAX) &&
+        (yPosition > -Y_MAX)) ||
+        ((yPosition > Y_MAX && t.delta.pageY < 0) ||
+        (yPosition < -Y_MAX && t.delta.pageY > 0)))  )
     {
+      yPosition += t.delta.pageY;
       road1.position =
       [
         road1.position[0],
