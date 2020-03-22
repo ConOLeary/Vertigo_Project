@@ -36,12 +36,14 @@ export default function HomeScreen({navigation}){
                         <View style={styles.eLine}/>
                         <Text style={styles.eList}>Lateral Gaze Stability III</Text>
                         <TouchableOpacity style= {styles.eButton}
-                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
+                        onPress={() => navigation.navigate('GameMenu', {name: 'GameMenu'})}>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                         <Text style={styles.eList}>Vertical Gaze Stability I</Text>
                         <TouchableOpacity style= {styles.eButton}
-                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
+                        /*onPress={() => navigation.navigate('Game', {name: 'Game'})}*/>
+                          {/* when this function is left in the the navigator will over the button to the game menu */}
+                          {/* TODO */}
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                       </View>
@@ -51,12 +53,12 @@ export default function HomeScreen({navigation}){
                         <View style={styles.eLine}/>
                         <Text style={styles.eList}>Lateral Gaze Stability II</Text>
                         <TouchableOpacity style= {styles.eButton}
-                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
+                        /*onPress={() => navigation.navigate('Game', {name: 'Game'})}*/>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                         <Text style={styles.eList}>Vertical Gaze Stability III</Text>
                         <TouchableOpacity style= {styles.eButton}
-                        onPress={() => navigation.navigate('Game', {name: 'Game'})}>
+                       /*onPress={() => navigation.navigate('Game', {name: 'Game'})}*/>
                           <Text style= {styles.eButtonText}>Begin</Text>
                         </TouchableOpacity>
                       </View>

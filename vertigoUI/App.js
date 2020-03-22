@@ -11,6 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LogInScreen from './LogIn'
 import WelcomeScreen from './welcome'
 import HomeScreen from './home'
+import GameMenu from './GameMenu'
 import Game from './game/game'
 
 
@@ -42,13 +43,16 @@ export default function MyStack() {
             component={HomeScreen}
             options={{ headerShown: false }}
             />
+        <Stack.Screen
+            name="GameMenu"
+            component={GameMenu}
+            options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name="Game"
                 component={Game}
                 options={{ headerShown: false }}
                 />
-
-
       </Stack.Navigator>
     </NavigationContainer>
   );
