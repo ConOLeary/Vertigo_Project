@@ -4,8 +4,8 @@ import {Dimensions} from "react-native";
 const {width, height} = Dimensions.get("window");
 
 let roadSpeed = 8;
-let yPosition = 0;
-let Y_MAX = 500;
+let yDeltaition = 0;
+let Y_MAX = height/2;
 
 //----------------------------------------------------
 
@@ -17,7 +17,7 @@ const Physics = (entities, { time }) => {
   };
 
 //----------------------------------------------------
-const MoveRoad = (entities, {touches, time}) =>
+const MoveRoad = (entities, { events }) =>
 {
   let road1 = entities["road1"];
   let road2 = entities["road2"];
@@ -39,6 +39,8 @@ const MoveRoad = (entities, {touches, time}) =>
   let coin14 = entities["coin14"];
   let coin15 = entities["coin15"];
   let coin16 = entities["coin16"];
+
+  let e = events.find(x => x.type === "moveFace");
 
   road1.position =[ road1.position[0] - roadSpeed, road1.position[1]  ];
   road2.position =[road2.position[0] - roadSpeed, road2.position[1]];
@@ -153,119 +155,128 @@ const MoveRoad = (entities, {touches, time}) =>
   } else {
     road4.position =[road4.position[0] - roadSpeed, road4.position[1]];
   }
-  touches.filter(t => t.type === "move").forEach(t =>
-  {
+  if(e) {
+    let yDelta = e.y;
+    console.log(yDelta);
     //so movement can only occur if car is within outer bounds
-    if (  (road1 && road1.position && road2 && road2.position &&
-        road3 && road3.position && road4 && road4.position) &&
-        (((yPosition < Y_MAX) &&
-        (yPosition > -Y_MAX)) ||
-        ((yPosition > Y_MAX && t.delta.pageY < 0) ||
-        (yPosition < -Y_MAX && t.delta.pageY > 0)))  )
-    {
-      yPosition += t.delta.pageY;
+      //yDeltaition += t.delta.pageY;
       road1.position =
       [
         road1.position[0],
-        road1.position[1] + t.delta.pageY
+        road1.position[1]+yDelta
       ]
+      if(road1.position[1]<-height/2)
+        road1.position[1]=-height/2;
+      if(road1.position[1]>height/2)
+        road1.position[1]=height/2
       road2.position =
       [
         road2.position[0],
-        road2.position[1] + t.delta.pageY
+        road2.position[1]+yDelta
       ]
+      if(road2.position[1]<-height/2)
+              road2.position[1]=-height/2;
+            if(road2.position[1]>height/2)
+              road2.position[1]=height/2
       road3.position =
       [
         road3.position[0],
-        road3.position[1] + t.delta.pageY
+        road3.position[1]+yDelta
       ]
+      if(road3.position[1]<-height/2)
+              road3.position[1]=-height/2;
+            if(road3.position[1]>height/2)
+              road3.position[1]=height/2
       road4.position =
       [
         road4.position[0],
-        road4.position[1] + t.delta.pageY
+        road4.position[1]+yDelta
       ]
+      if(road4.position[1]<-height/2)
+              road4.position[1]=-height/2;
+            if(road4.position[1]>height/2)
+              road4.position[1]=height/2
       coin.position =
       [
         coin.position[0],
-        coin.position[1] + t.delta.pageY
+        coin.position[1]+yDelta
       ]
       coin2.position =
       [
         coin2.position[0],
-        coin2.position[1] + t.delta.pageY
+        coin2.position[1]+yDelta
       ]
       coin3.position =
       [
         coin3.position[0],
-        coin3.position[1] + t.delta.pageY
+        coin3.position[1]+yDelta
       ]
       coin4.position =
       [
         coin4.position[0],
-        coin4.position[1] + t.delta.pageY
+        coin4.position[1]+yDelta
       ]
       coin5.position =
       [
         coin5.position[0],
-        coin5.position[1] + t.delta.pageY
+        coin5.position[1]+yDelta
       ]
       coin6.position =
       [
         coin6.position[0],
-        coin6.position[1] + t.delta.pageY
+        coin6.position[1]+yDelta
       ]
       coin7.position =
       [
         coin7.position[0],
-        coin7.position[1] + t.delta.pageY
+        coin7.position[1]+yDelta
       ]
       coin8.position =
       [
         coin8.position[0],
-        coin8.position[1] + t.delta.pageY
+        coin8.position[1]+yDelta
       ]
       coin9.position =
       [
         coin9.position[0],
-        coin9.position[1] + t.delta.pageY
+        coin9.position[1]+yDelta
       ]
       coin10.position =
       [
         coin10.position[0],
-        coin10.position[1] + t.delta.pageY
+        coin10.position[1]+yDelta
       ]
       coin11.position =
       [
         coin11.position[0],
-        coin11.position[1] + t.delta.pageY
+        coin11.position[1]+yDelta
       ]
       coin12.position =
       [
         coin12.position[0],
-        coin12.position[1] + t.delta.pageY
+        coin12.position[1]+yDelta
       ]
       coin13.position =
       [
         coin13.position[0],
-        coin13.position[1] + t.delta.pageY
+        coin13.position[1]+yDelta
       ]
       coin14.position =
       [
         coin14.position[0],
-        coin14.position[1] + t.delta.pageY
+        coin14.position[1]+yDelta
       ]
       coin15.position =
       [
         coin15.position[0],
-        coin15.position[1] + t.delta.pageY
+        coin15.position[1]+yDelta
       ]
       coin16.position =
       [
         coin16.position[0],
-        coin16.position[1] + t.delta.pageY
+        coin16.position[1]+yDelta
       ]
-    }
-  });
+  };
     // car.position =
     // [
     //   car.position[0],

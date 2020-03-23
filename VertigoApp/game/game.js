@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, StatusBar,
-  ImageBackground,Dimensions, View } from "react-native";
+  ImageBackground,Dimensions, View, Text } from "react-native";
 import { GameEngine } from "react-native-game-engine";
 import Matter from "matter-js";
 import { Car } from "./car";
@@ -17,7 +17,7 @@ coinXspacing = 50;
 coinXinitialBuffer = 667;
 roadHeight = height * 0.8;
 amplitude = roadHeight / 2;
-const angleAmplitude = 55;
+const angleAmplitude = 50;
 freqMod = 3;
 
 export default class Game extends Component
@@ -25,16 +25,25 @@ export default class Game extends Component
   constructor(props)
   {
        super(props);
-       this.state = {running: true, faces: []};
+       this.state = {running: true, faces: [], previousY: 0};
        this.gameEngine = null;
        //this.entities = this.setupWorld();
    }
+   /*doUpdate = () => {
 
-    faceFound =({ faces }) => {
-       this.setState({faces});
-       }
-
-       getAngle = () => {
+    console.log("pog");
+   }*/
+   doUpdate = () => {
+    this.gameEngine.publishEvent({type:"moveFace",y:(this.getY()-height/2-this.state.previousY)});
+    this.setState({previousY:(this.getY()-height/2)});
+   }
+  componentDidMount() {
+    this.interval = setInterval(()=> {this.doUpdate},8);
+    }
+  /*componentWillUnmount() {
+    clearInterval(this.interval);
+  }*/
+getAngle = () => {
               return this.state.faces.length>0? this.state.faces[0].yawAngle : 0.0
        }
 
@@ -52,6 +61,15 @@ export default class Game extends Component
             let mappedValue = (angle-angleAmplitude)*height/(-2*angleAmplitude);
             return mappedValue
        }
+
+    faceFound =({ faces }) => {
+       this.setState({faces});
+       let delta=this.getY()-height/2-this.state.previousY
+       if(Math.abs(delta)>1){
+           this.gameEngine.publishEvent({type:"moveFace",y:(delta)});
+           this.setState({previousY:(this.getY()-height/2)});
+       }
+    }
 
    setupWorld = () =>
    {
@@ -126,10 +144,11 @@ export default class Game extends Component
                                  this.camera = ref;
                                 }}
                                 style={{
-                                    flex: 1,
-                                    width: '100%',
-                                }}
+                                                                    flex: 0.1,
+                                                                    width: '1%',
+                                                                }}
                                 type={RNCamera.Constants.Type.front}
+                                captureAudio = {false}
                                 androidCameraPermissionOptions={{
                                 title: 'Permission to use camera',
                                 message: 'We need your permission to use your camera',
@@ -147,7 +166,8 @@ export default class Game extends Component
                                      : undefined
                                 }
                                 onFacesDetected = {this.faceFound}
-                          />
+                          >
+                          </RNCamera>
                  <GameEngine
                      ref={(ref) => { this.gameEngine = ref; }}
                      style={styles.gameContainer}
