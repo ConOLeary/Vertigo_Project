@@ -17,12 +17,20 @@ const Physics = (entities, { time }) => {
   };
 
 //----------------------------------------------------
+
+const GetCoinsCollected = () =>
+{
+  return car.coinsCollected[0];
+};
+
+//move road + coins, car upper & lower bounds, coin collection
 const MoveRoad = (entities, {touches, time}) =>
 {
   let road1 = entities["road1"];
   let road2 = entities["road2"];
   let road3 = entities["road3"];
   let road4 = entities["road4"];
+  let car = entities["car"];
   let coin = entities["coin"];
   let coin2 = entities["coin2"];
   let coin3 = entities["coin3"];
@@ -40,101 +48,230 @@ const MoveRoad = (entities, {touches, time}) =>
   let coin15 = entities["coin15"];
   let coin16 = entities["coin16"];
 
+  if (coin.position[0] < car.position[0] + car.size[0] &&
+    coin.position[0] + coin.size[0] > car.position[0] &&
+    coin.position[1] < car.position[1] + car.size[1] &&
+    coin.position[1] + coin.size[1] > car.position[1]) {
+     coin.vis[0] = false;
+     car.coinsCollected[0]++;
+  }
+  if (coin2.position[0] < car.position[0] + car.size[0] &&
+    coin2.position[0] + coin2.size[0] > car.position[0] &&
+    coin2.position[1] < car.position[1] + car.size[1] &&
+    coin2.position[1] + coin2.size[1] > car.position[1]) {
+      coin2.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin3.position[0] < car.position[0] + car.size[0] &&
+    coin3.position[0] + coin3.size[0] > car.position[0] &&
+    coin3.position[1] < car.position[1] + car.size[1] &&
+    coin3.position[1] + coin3.size[1] > car.position[1]) {
+      coin3.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin4.position[0] < car.position[0] + car.size[0] &&
+    coin4.position[0] + coin4.size[0] > car.position[0] &&
+    coin4.position[1] < car.position[1] + car.size[1] &&
+    coin4.position[1] + coin4.size[1] > car.position[1]) {
+      coin4.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin5.position[0] < car.position[0] + car.size[0] &&
+    coin5.position[0] + coin5.size[0] > car.position[0] &&
+    coin5.position[1] < car.position[1] + car.size[1] &&
+    coin5.position[1] + coin5.size[1] > car.position[1]) {
+      coin5.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin6.position[0] < car.position[0] + car.size[0] &&
+    coin6.position[0] + coin6.size[0] > car.position[0] &&
+    coin6.position[1] < car.position[1] + car.size[1] &&
+    coin6.position[1] + coin6.size[1] > car.position[1]) {
+      coin6.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin7.position[0] < car.position[0] + car.size[0] &&
+    coin7.position[0] + coin7.size[0] > car.position[0] &&
+    coin7.position[1] < car.position[1] + car.size[1] &&
+    coin7.position[1] + coin7.size[1] > car.position[1]) {
+      coin7.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin8.position[0] < car.position[0] + car.size[0] &&
+    coin8.position[0] + coin8.size[0] > car.position[0] &&
+    coin8.position[1] < car.position[1] + car.size[1] &&
+    coin8.position[1] + coin8.size[1] > car.position[1]) {
+      coin8.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin9.position[0] < car.position[0] + car.size[0] &&
+    coin9.position[0] + coin9.size[0] > car.position[0] &&
+    coin9.position[1] < car.position[1] + car.size[1] &&
+    coin9.position[1] + coin9.size[1] > car.position[1]) {
+      coin9.vis[0] = false;
+      car.coinsCollected[0]++;
+    }
+  if (coin10.position[0] < car.position[0] + car.size[0] &&
+    coin10.position[0] + coin10.size[0] > car.position[0] &&
+    coin10.position[1] < car.position[1] + car.size[1] &&
+    coin10.position[1] + coin10.size[1] > car.position[1]) {
+      coin10.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin11.position[0] < car.position[0] + car.size[0] &&
+    coin11.position[0] + coin11.size[0] > car.position[0] &&
+    coin11.position[1] < car.position[1] + car.size[1] &&
+    coin11.position[1] + coin11.size[1] > car.position[1]) {
+      coin11.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin12.position[0] < car.position[0] + car.size[0] &&
+    coin12.position[0] + coin12.size[0] > car.position[0] &&
+    coin12.position[1] < car.position[1] + car.size[1] &&
+    coin12.position[1] + coin12.size[1] > car.position[1]) {
+      coin12.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin13.position[0] < car.position[0] + car.size[0] &&
+    coin13.position[0] + coin13.size[0] > car.position[0] &&
+    coin13.position[1] < car.position[1] + car.size[1] &&
+    coin13.position[1] + coin13.size[1] > car.position[1]) {
+      coin13.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin14.position[0] < car.position[0] + car.size[0] &&
+    coin14.position[0] + coin14.size[0] > car.position[0] &&
+    coin14.position[1] < car.position[1] + car.size[1] &&
+    coin14.position[1] + coin14.size[1] > car.position[1]) {
+      coin14.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin15.position[0] < car.position[0] + car.size[0] &&
+    coin15.position[0] + coin15.size[0] > car.position[0] &&
+    coin15.position[1] < car.position[1] + car.size[1] &&
+    coin15.position[1] + coin15.size[1] > car.position[1]) {
+      coin15.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+  if (coin16.position[0] < car.position[0] + car.size[0] &&
+    coin16.position[0] + coin16.size[0] > car.position[0] &&
+    coin16.position[1] < car.position[1] + car.size[1] &&
+    coin16.position[1] + coin16.size[1] > car.position[1]) {
+      coin16.vis[0] = false;
+      car.coinsCollected[0]++;
+  }
+
   road1.position =[ road1.position[0] - roadSpeed, road1.position[1]  ];
   road2.position =[road2.position[0] - roadSpeed, road2.position[1]];
 
   if (coin.position[0] <= -1 * (width-roadSpeed)){
     coin.position =[ width, coin.position[1]  ];
+    coin.vis[0] = true;
   } else
   {
     coin.position =[ coin.position[0] - roadSpeed, coin.position[1]  ];
   }
   if (coin2.position[0] <= -1 * (width-roadSpeed)){
     coin2.position =[ width, coin2.position[1]  ];
+    coin2.vis[0] = true;
   } else
   {
     coin2.position =[ coin2.position[0] - roadSpeed, coin2.position[1]  ];
   }
   if (coin3.position[0] <= -1 * (width-roadSpeed)){
     coin3.position =[ width, coin3.position[1]  ];
+    coin3.vis[0] = true;
   } else
   {
     coin3.position =[ coin3.position[0] - roadSpeed, coin3.position[1]  ];
   }
   if (coin4.position[0] <= -1 * (width-roadSpeed)){
     coin4.position =[ width, coin4.position[1]  ];
+    coin4.vis[0] = true;
   } else
   {
     coin4.position =[ coin4.position[0] - roadSpeed, coin4.position[1]  ];
   }
   if (coin5.position[0] <= -1 * (width-roadSpeed)){
     coin5.position =[ width, coin5.position[1]  ];
+    coin5.vis[0] = true;
   } else
   {
     coin5.position =[ coin5.position[0] - roadSpeed, coin5.position[1]  ];
   }
   if (coin6.position[0] <= -1 * (width-roadSpeed)){
     coin6.position =[ width, coin6.position[1]  ];
+    coin6.vis[0] = true;
   } else
   {
     coin6.position =[ coin6.position[0] - roadSpeed, coin6.position[1]  ];
   }
   if (coin7.position[0] <= -1 * (width-roadSpeed)){
     coin7.position =[ width, coin7.position[1]  ];
+    coin7.vis[0] = true;
   } else
   {
     coin7.position =[ coin7.position[0] - roadSpeed, coin7.position[1]  ];
   }
   if (coin8.position[0] <= -1 * (width-roadSpeed)){
     coin8.position =[ width, coin8.position[1]  ];
+    coin8.vis[0] = true;
   } else
   {
     coin8.position =[ coin8.position[0] - roadSpeed, coin8.position[1]  ];
   }
   if (coin9.position[0] <= -1 * (width-roadSpeed)){
     coin9.position =[ width, coin9.position[1]  ];
+    coin9.vis[0] = true;
   } else
   {
     coin9.position =[ coin9.position[0] - roadSpeed, coin9.position[1]  ];
   }
   if (coin10.position[0] <= -1 * (width-roadSpeed)){
     coin10.position =[ width, coin10.position[1]  ];
+    coin10.vis[0] = true;
   } else
   {
     coin10.position =[ coin10.position[0] - roadSpeed, coin10.position[1]  ];
   }
   if (coin11.position[0] <= -1 * (width-roadSpeed)){
     coin11.position =[ width, coin11.position[1]  ];
+    coin11.vis[0] = true;
   } else
   {
     coin11.position =[ coin11.position[0] - roadSpeed, coin11.position[1]  ];
   }
   if (coin12.position[0] <= -1 * (width-roadSpeed)){
     coin12.position =[ width, coin12.position[1]  ];
+    coin12.vis[0] = true;
   } else
   {
     coin12.position =[ coin12.position[0] - roadSpeed, coin12.position[1]  ];
   }
   if (coin13.position[0] <= -1 * (width-roadSpeed)){
     coin13.position =[ width, coin13.position[1]  ];
+    coin13.vis[0] = true;
   } else
   {
     coin13.position =[ coin13.position[0] - roadSpeed, coin13.position[1]  ];
   }
   if (coin14.position[0] <= -1 * (width-roadSpeed)){
     coin14.position =[ width, coin14.position[1]  ];
+    coin14.vis[0] = true;
   } else
   {
     coin14.position =[ coin14.position[0] - roadSpeed, coin14.position[1]  ];
   }
   if (coin15.position[0] <= -1 * (width-roadSpeed)){
     coin15.position =[ width, coin15.position[1]  ];
+    coin15.vis[0] = true;
   } else
   {
     coin15.position =[ coin15.position[0] - roadSpeed, coin15.position[1]  ];
   }
   if (coin16.position[0] <= -1 * (width-roadSpeed)){
     coin16.position =[ width, coin16.position[1]  ];
+    coin16.vis[0] = true;
   } else
   {
     coin16.position =[ coin16.position[0] - roadSpeed, coin16.position[1]  ];
