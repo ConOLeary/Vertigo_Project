@@ -83,7 +83,7 @@ export default class Game extends Component
        }//
    }
 
-   render(entities) {
+   render() {
          return (
              <View style={styles.container}>
                  
@@ -96,7 +96,7 @@ export default class Game extends Component
                      entities={this.setupWorld()}>
                      <StatusBar hidden={true} />
                  </GameEngine>
-                 <Text style={styles.coinText}>{GetCoinsCollected()}</Text>
+                 <Text style={styles.coinText}>50</Text>
              </View>
          );
      }
