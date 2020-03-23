@@ -4,6 +4,8 @@
     <list default="true" id="e131f2b1-a716-4e59-8444-f933c8a3ac9d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertigoUI/game/Movement.js" beforeDir="false" afterPath="$PROJECT_DIR$/vertigoUI/game/Movement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertigoUI/game/car.js" beforeDir="false" afterPath="$PROJECT_DIR$/vertigoUI/game/car.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vertigoUI/game/coin.js" beforeDir="false" afterPath="$PROJECT_DIR$/vertigoUI/game/coin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vertigoUI/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/vertigoUI/game/game.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +27,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>

@@ -3,6 +3,7 @@ import { StyleSheet, View,Image } from "react-native";
 import coin from "./coin.png"
 
 class Coin extends PureComponent {
+  
   constructor(props) {
     super(props);
   }
@@ -12,23 +13,26 @@ class Coin extends PureComponent {
     let height = this.props.size[1];
     let x = this.props.position[0];
     let y = this.props.position[1];
+    let visible = this.props.vis[0];
     //const angle = this.props.body.angle;
 
 
+    if (!visible) {
+      return null;
+    } else {
+      return (
+        <Image
+          source={coin}
+          style={[{
+          left: x,
+          top: y,
+          width: width,
+          height: height,
+          position: "absolute",
+        }]} />
+      );
+    }
 
-    return (
-      <Image
-        source={coin}
-        style={[{
-        left: x,
-        top: y,
-        width: width,
-        height: height,
-        position: "absolute",
-      }]} />
-      
-      
-    );
   }
 }
 

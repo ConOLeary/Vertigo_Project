@@ -12,6 +12,7 @@ class Car extends PureComponent {
     let height = this.props.size[1];
     let x = this.props.position[0];
     let y = this.props.position[1];
+    let coinsCollected = this.props.coinsCollected[0];
     //const angle = this.props.body.angle;
     return (
       <Image
