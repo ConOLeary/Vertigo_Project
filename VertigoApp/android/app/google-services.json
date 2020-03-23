@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "943484023448",
+    "firebase_url": "https://vertigoapp-63077.firebaseio.com",
+    "project_id": "vertigoapp-63077",
+    "storage_bucket": "vertigoapp-63077.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943484023448:android:eba3789eb957bbd39456ed",
+        "android_client_info": {
+          "package_name": "com.vertigoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943484023448-qfsc73ool9kvsqnbdql9b555dk0iqft9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvbBFHHJyc1yP6064JMDYtHkk0HAQXiBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943484023448-qfsc73ool9kvsqnbdql9b555dk0iqft9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
