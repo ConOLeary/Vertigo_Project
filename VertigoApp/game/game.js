@@ -10,6 +10,7 @@ import { Road2 } from "./join";
 import { Road1 } from "./straight";
 import { MoveCar, MoveRoad,Physics } from "./Movement"
 import { RNCamera } from 'react-native-camera';
+import bgImage from "./grass.jpg";
 
 const { width, height } = Dimensions.get("window");
 coinYbuffer = 420;
@@ -29,10 +30,7 @@ export default class Game extends Component
        this.gameEngine = null;
        //this.entities = this.setupWorld();
    }
-   /*doUpdate = () => {
 
-    console.log("pog");
-   }*/
    doUpdate = () => {
     this.gameEngine.publishEvent({type:"moveFace",y:(this.getY()-height/2-this.state.previousY)});
     this.setState({previousY:(this.getY()-height/2)});
@@ -138,46 +136,40 @@ getAngle = () => {
 
    render() {
          return (
-             <View style={styles.container}>
-             <RNCamera
-                                ref={ref => {
-                                 this.camera = ref;
-                                }}
-                                style={{
-                                                                    flex: 0.1,
-                                                                    width: '1%',
-                                                                }}
-                                type={RNCamera.Constants.Type.front}
-                                captureAudio = {false}
-                                androidCameraPermissionOptions={{
-                                title: 'Permission to use camera',
-                                message: 'We need your permission to use your camera',
-                                buttonPositive: 'Ok',
-                                buttonNegative: 'Cancel',
-                                }}
-                                faceDetectionLandmarks={
-                                     RNCamera.Constants.FaceDetection.Landmarks
-                                     ? RNCamera.Constants.FaceDetection.Landmarks.all
-                                     : undefined
-                                }
-                                faceDetectionClassifications={
-                                     RNCamera.Constants.FaceDetection.Classifications
-                                     ? RNCamera.Constants.FaceDetection.Classifications.all
-                                     : undefined
-                                }
-                                onFacesDetected = {this.faceFound}
-                          >
-                          </RNCamera>
+             <ImageBackground source={bgImage} style={styles.container}>
+               <RNCamera
+                  ref={ref => {this.camera = ref;}}
+                  style={{width: '1%',}}
+                  type={RNCamera.Constants.Type.front}
+                  captureAudio = {false}
+                  androidCameraPermissionOptions={{
+                  title: 'Permission to use camera',
+                  message: 'We need your permission to use your camera',
+                  buttonPositive: 'Ok',
+                  buttonNegative: 'Cancel',
+                  }}
+                  faceDetectionLandmarks={
+                       RNCamera.Constants.FaceDetection.Landmarks
+                       ? RNCamera.Constants.FaceDetection.Landmarks.all
+                       : undefined
+                  }
+                  faceDetectionClassifications={
+                       RNCamera.Constants.FaceDetection.Classifications
+                       ? RNCamera.Constants.FaceDetection.Classifications.all
+                       : undefined
+                  }
+                  onFacesDetected = {this.faceFound}
+            >
+            </RNCamera>
                  <GameEngine
                      ref={(ref) => { this.gameEngine = ref; }}
                      style={styles.gameContainer}
                      running={this.state.running}
                      systems={[Physics, MoveCar, MoveRoad]}
-                     // add move coin
                      entities={this.setupWorld()}>
                      <StatusBar hidden={true} />
                  </GameEngine>
-             </View>
+             </ImageBackground>
          );
      }
  }
@@ -185,7 +177,7 @@ getAngle = () => {
  const styles = StyleSheet.create({
      container: {
          flex: 1,
-         backgroundColor: '#fff',
+         //backgroundColor: '#fff',
      },
      gameContainer: {
          position: 'absolute',
