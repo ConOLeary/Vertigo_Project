@@ -141,6 +141,7 @@ getAngle = () => {
          return (
 
              <View style={styles.container}>
+             <ImageBackground source={bgImage} >
              <RNCamera
                                 ref={ref => {
                                  this.camera = ref;
@@ -179,6 +180,7 @@ getAngle = () => {
                      entities={this.setupWorld()}>
                      <StatusBar hidden={true} />
                  </GameEngine>
+                 </ImageBackground>
              </View>
          );
      }
