@@ -10,6 +10,7 @@ import { Road2 } from "./join";
 import { Road1 } from "./straight";
 import { MoveCar, MoveRoad,Physics } from "./Movement"
 import { RNCamera } from 'react-native-camera';
+import bgImage from "./grass.jpg"
 
 const { width, height } = Dimensions.get("window");
 coinYbuffer = 420;
@@ -138,6 +139,7 @@ getAngle = () => {
 
    render() {
          return (
+
              <View style={styles.container}>
              <RNCamera
                                 ref={ref => {
