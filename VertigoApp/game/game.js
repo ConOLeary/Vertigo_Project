@@ -78,7 +78,7 @@ getAngle = () => {
      let engine = Matter.Engine.create({ enableSleeping: false });
      let world = engine.world;
      //width & length properties here don't actually define
-     let car = Matter.Bodies.rectangle(50, height/2, 80, 40);
+     let car = Matter.Bodies.rectangle(50, height/2, 120, 60);
      let coin = Matter.Bodies.rectangle(100, height/2, 80, 40);
      let coin2 = Matter.Bodies.rectangle(100, height/2, 80, 40);
      let coin3 = Matter.Bodies.rectangle(100, height/2, 80, 40);
@@ -117,7 +117,7 @@ getAngle = () => {
            road3: { body: road, position: [width*2,  0], renderer: Road3 },
            road4: { body: road2, position: [width*3,  0], renderer: Road3 },
            //exported traits
-           car: { body: car, position: [50,  height/2], size:[80, 40], renderer: Car},
+           car: { body: car, position: [50,  height/2], size:[120, 60], renderer: Car},
            coin: { body: coin, position: [coinXinitialBuffer + coinXspacing,  height - (coinYbuffer + (amplitude*-Math.cos(freqMod*coinXspacing)))], size:[30, 30], renderer: Coin},
            coin2: { body: coin2, position: [coinXinitialBuffer + coinXspacing*2,  height - (coinYbuffer + (amplitude*-Math.cos(freqMod*coinXspacing*2)))], size:[30, 30], renderer: Coin},
            coin3: { body: coin2, position: [coinXinitialBuffer + coinXspacing*3,  height - (coinYbuffer + (amplitude*-Math.cos(freqMod*coinXspacing*3)))], size:[30, 30], renderer: Coin},
