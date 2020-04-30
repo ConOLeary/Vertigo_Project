@@ -1,6 +1,18 @@
 download the project, open vertigoApp and run npm install
 open the project in Android Studio and wait for it to build
-got to react-native-camera->java->org.reactnative->camera->RNCameraViewHelper
+
+
+
+
+
+
+
+
+
+
+
+//BugFixes//
+go to react-native-camera->java->org.reactnative->camera->RNCameraViewHelper
 
 find getCorrectCameraRotation function (line 328) and replace it with
 
